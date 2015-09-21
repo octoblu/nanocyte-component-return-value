@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- '0.11'
+deploy:
+  provider: npm
+  email: serveradmin@octoblu.com
+  api_key:
+    secure: hx51ezBMlEkt/ADnLzz9PrA2Smn8Afb8fJtsbmAJRQX3iLE8v6xJVXTc+utftBPEc71n1WtlIUv4tWTIScf2WZBE6IDGgHht4t1Y7BdOSzrflSdVAFtesMZI45T3c5CYe41se0IRcSYHg5cfuWsoSvrp8yL1+wba3a1qau3qb5DycwifFE2m9fHEBSijcyGEtmAiPZv+MuKhAQPQHzNilF1eyr/HtX1Cn5vMwnSD6ilk+lUWk/EdI09UYdOMDmOrIfqgE2/R/XBlqvtSUg1SaJIm0MPhGJtjSGeE9RHyTlJ2Oj2cDdkNWZC1K9FjjaMEBNTjybJ7EfkkxLal2nLlO6sNU9IUN7CohDEtU1KllmG8nThqJnocsLpAX6sCGdKI5LMoslM6pHKo0y/slrS7Y2O77pBQs4c/881AODhEwkPgiFH2TvfrIoCurRRq6EKMugWekNs+f8yJH3wwQXgNB2tH58/n0BKCgAntT8LHpjXqSf03JPk1noWnKh57OlLygyMkwLKP31g01W7pVvrfn8ZV9ETfy/FiZH3wbir7Vu3efA/QGjrDbgha1GUwgH9tLPcFw3sSiI+6dfWYn7c+s6/ajlIKeympzKW4jwiUnjpJ3iVvQEOzYJEElhmW4GTgu7EbVtJPLX2pXfEz3j0eholMweJlG0pcw36lkMoCASU=
+  on:
+    tags: true
+    branches: true
+    repo: octoblu/nanocyte-component-return-value
