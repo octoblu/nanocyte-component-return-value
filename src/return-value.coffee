@@ -11,7 +11,9 @@ class ReturnValue extends Transform
     try
       result = @onEnvelope envelope
     catch error
-      return next error
+      next error
+      @push null
+      return
 
     @push result
     @push null

@@ -58,7 +58,9 @@ describe 'ReturnValue', ->
 
     describe 'when written to', ->
       beforeEach (done) ->
-        @piano.on 'error', (@error) => done()
+        @piano.on 'end', done
+        @piano.on 'error', (@error) =>
+        @piano.on 'readable', =>
         @piano.write()
 
       it 'should emit an error', ->
