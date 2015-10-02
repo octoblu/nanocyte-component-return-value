@@ -47,3 +47,19 @@ describe 'ReturnValue', ->
         @tallBuilding.write {}, done
 
       it 'should get here', ->
+
+  describe 'a broken subclass of return value', ->
+    beforeEach ->
+      class Piano extends ReturnValue
+        onEnvelope: =>
+          throw new Error "Don't worry"
+
+      @piano = new Piano
+
+    describe 'when written to', ->
+      beforeEach (done) ->
+        @piano.on 'error', (@error) => done()
+        @piano.write()
+
+      it 'should emit an error', ->
+        expect(=> throw @error).to.throw "Don't worry"

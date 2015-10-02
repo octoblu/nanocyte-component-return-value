@@ -8,7 +8,12 @@ class ReturnValue extends Transform
     throw new Error('onEnvelope is not implemented')
 
   _transform: (envelope, enc, next) =>
-    @push @onEnvelope envelope
+    try
+      result = @onEnvelope envelope
+    catch error
+      return next error
+
+    @push result
     @push null
     next()
 
