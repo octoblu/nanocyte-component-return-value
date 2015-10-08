@@ -27,7 +27,6 @@ describe 'ReturnValue', ->
           while thing = @tallBuilding.read()
             @things.push thing
 
-
         @tallBuilding.write
           message: 'very tall house'
           config: {}
@@ -65,3 +64,21 @@ describe 'ReturnValue', ->
 
       it 'should emit an error', ->
         expect(=> throw @error).to.throw "Don't worry"
+
+    describe 'a sublcass that returns undefined', ->
+      beforeEach ->
+        class Piano extends ReturnValue
+          onEnvelope: =>
+
+
+        @piano = new Piano
+
+      describe 'when written to', ->
+        beforeEach (done) ->
+          @onData = sinon.spy()
+          @piano.on 'data', @onData
+          @piano.write()
+          @piano.on 'end', => done()
+
+        it 'should not emit data', ->
+          expect(@onData).to.not.have.been.called

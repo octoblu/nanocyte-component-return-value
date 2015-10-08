@@ -1,6 +1,6 @@
 {
   "name": "nanocyte-component-return-value",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Base class for simple nanocyte integration",
   "main": "index.js",
   "directories": {

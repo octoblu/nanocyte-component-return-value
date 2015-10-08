@@ -15,7 +15,7 @@ class ReturnValue extends Transform
       @push null
       return
 
-    @push result
+    @push result if result?
     @push null
     next()
 
