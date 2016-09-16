@@ -10,3 +10,5 @@ deploy:
     tags: true
     branches: true
     repo: octoblu/nanocyte-component-return-value
+after_success:
+- bash <(curl -s https://codecov.io/bash)
