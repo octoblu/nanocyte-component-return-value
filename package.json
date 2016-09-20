@@ -7,9 +7,10 @@
     "test": "test"
   },
   "scripts": {
-    "test": "env NODE_ENV=test mocha",
+    "test": "mocha",
     "coverage": "nyc npm test",
-    "test:watch": "mocha -w -R mocha-multi --reporter-options spec=-,mocha-osx-reporter=-"
+    "test:watch": "mocha -w -R mocha-multi --reporter-options spec=-,mocha-osx-reporter=-",
+    "mocha:json": "env NPM_ENV=test mocha --reporter json > coverage/mocha.json"
   },
   "repository": {
     "type": "git",
